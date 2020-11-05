@@ -4,14 +4,16 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 int main(int argc, char *argv[]) {
-	
 	int i = 10;
-	char c = 69;
-	float f = 12.3;
+	char c = 'a';
 	
-	printf("i : %i %p \n", i, &i);
-	printf("c : %c %p \n", c, &c);
-	printf("f : %f %p \n", f, &f);
+	int *iptr = &i;
+	char *cptr = &c;
+	int *iptr2 = iptr;
 	
+	printf("i : %p\n%p (size:%i)\n", iptr, &i, sizeof(iptr));
+	printf("c : %p\n%p (size:%i)\n", cptr, &c, sizeof(cptr));
+	printf("iprt2 : %p, %i\n", iptr2, *iptr2);
+		 
 	return 0;
 }
